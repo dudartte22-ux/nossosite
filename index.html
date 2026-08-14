@@ -338,9 +338,10 @@
     VOCÊ ME AMA? 💗
 </div>
                 
-                <!-- BOTÕES -->
+ <!-- BOTÕES -->
 <div style="text-align: center; margin-top: 30px;">
 
+    <!-- BOTÃO SIM -->
     <button onclick="mostrarMensagem('EU TAMBÉM TE AMO ❤️')"
         style="
         background-color: pink;
@@ -355,7 +356,10 @@
         SIM 💗
     </button>
 
-    <button onclick="mostrarMensagem('PROBLEMA É SEU, VAI TER QUE AMAR 😏👉👈❤️')"
+    <!-- BOTÃO NÃO -->
+    <button id="botaoNao"
+        onclick="mostrarMensagem('PROBLEMA É SEU, VAI TER QUE AMAR ❤️')"
+        onmouseover="fugir()"
         style="
         background-color: pink;
         color: white;
@@ -435,14 +439,22 @@ function fecharMensagem() {
     document.getElementById("caixinha").style.display = "none";
 }
 
+
+// PEGADINHA DO NÃO 😈
+function fugir() {
+
+    const botao = document.getElementById("botaoNao");
+
+    botao.style.position = "fixed";
+
+    const x = Math.random() * (window.innerWidth - botao.offsetWidth - 20);
+    const y = Math.random() * (window.innerHeight - botao.offsetHeight - 20);
+
+    botao.style.left = x + "px";
+    botao.style.top = y + "px";
+}
+
 </script>
-                <BR>
-             
-        </ul>
-
-    </div>
-
-</body>
 
 </html>
 
